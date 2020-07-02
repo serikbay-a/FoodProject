@@ -5,6 +5,6 @@ from flask import render_template, redirect
 @app.route('/index')
 
 def hello():
-    text = 'Food-site-title'
-    return render_template('index.html', title = text)
+    title = 'Food-site-title'
+    return render_template('index.html', title = title, active='main'.lower())
 
