@@ -36,9 +36,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\static\css\catalog_style.css" />
+    <Content Include="app\static\css\donate_style.css" />
+    <Content Include="app\static\css\select_style.css" />
+    <Content Include="app\templates\catalog.html" />
+    <Content Include="app\templates\donate.html" />
+    <Content Include="app\templates\select.html" />
     <Content Include="app\templates\index.html" />
-    <Content Include="app\templates\main.html" />
-    <Content Include="app\templates\style_main.css" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\css\" />
     <Folder Include="app\templates\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
