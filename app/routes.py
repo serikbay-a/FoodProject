@@ -7,7 +7,8 @@ from flask import render_template, redirect, url_for
 @app.route('/catalog')
 def catalog():
     title = 'имя-сайта'
-    return render_template('catalog.html', title = title, active='catalog'.lower())
+    cards = [{'title':'Курочка с хреном', 'pic':'https://img1.russianfood.com/dycontent/images_upl/185/big_184766.jpg', 'url': '', 'recipe':['курочка', "хрен", "майонезик", "соус"]}]
+    return render_template('catalog.html', title = title, active='catalog'.lower(), cards = cards)
     
 
 @app.route('/select/')

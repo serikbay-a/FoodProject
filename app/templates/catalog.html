@@ -5,4 +5,100 @@
 {% endblock %}
 {% block content %}
 <!-- HERE YOUR CONTENT HTML CODE -->
+    <div class="left-sb">
+        <form action="" method="POST" class='word-form'>
+            <h3 class="word-filter">A</h3>
+            <hr>
+            <h3 class="word-filter">Б</h3>
+            <hr>
+            <h3 class="word-filter">В</h3>
+            <hr>
+            <h3 class="word-filter">Г</h3>
+            <hr>
+            <h3 class="word-filter">Д</h3>
+            <hr>
+            <h3 class="word-filter">Е</h3>
+            <hr>
+            <h3 class="word-filter">Ж</h3>
+            <hr>
+            <h3 class="word-filter">З</h3>
+            <hr>
+            <h3 class="word-filter">И</h3>
+            <hr>
+            <h3 class="word-filter">К</h3>
+            <a href="?recipe=potato" class='cb-label'>Картошка</a>
+            <hr>
+            <h3 class="word-filter">Л</h3>
+            <hr>
+            <h3 class="word-filter">М</h3>
+            <a href="?recipe=carrot" class='cb-label'>Морковь</a>
+            <hr>
+            <h3 class="word-filter">Н</h3>
+            <hr>
+            <h3 class="word-filter">О</h3>
+            <a href="?recipe=cucumber" class='cb-label'>Огурец</a>
+            <hr>
+            <h3 class="word-filter">П</h3>
+            <hr>
+            <h3 class="word-filter">Р</h3>
+            <hr>
+            <h3 class="word-filter">С</h3>
+            <hr>
+            <h3 class="word-filter">Т</h3>
+            <a href="?recipe=tomato" class='cb-label'>Помидор</a>
+            <hr>
+            <h3 class="word-filter">У</h3>
+            <hr>
+            <h3 class="word-filter">Ф</h3>
+            <hr>
+            <h3 class="word-filter">Х</h3>
+            <hr>
+            <h3 class="word-filter">Ц</h3>
+            <hr>
+            <h3 class="word-filter">Ч</h3>
+            <hr>
+            <h3 class="word-filter">Ш</h3>
+            <hr>
+            <h3 class="word-filter">Щ</h3>
+            <hr>
+            <h3 class="word-filter">Э</h3>
+            <hr>
+            <h3 class="word-filter">Ю</h3>
+            <hr>
+            <h3 class="word-filter">Я</h3>
+            <input type="submit" type="button" value="Изменить фильтр" class="submit">
+
+        </form>
+    </div>
+    <div class="right">
+        <div class="categories">
+            <a href="?category=first" class='category-a' ><div class="first-category">Первое</div></a>
+            <a href="?category=second" class='category-a' ><div class="second-category">Второе</div></a>
+            <a href="?category=bakery" class='category-a' ><div class="bakery-category">Выпечка</div></a>
+        
+        </div>
+        <div class="categories">
+            <a href="?category=salad" class='category-a' ><div class="salad-category">Салаты</div></a>
+            <a href="?category=dessert" class='category-a' ><div class="dessert-category">Дессерты</div></a>
+        </div>
+        {%if cards%}
+            {% for card in cards %}
+                <div class="card">
+                    <div class="card-pic"><img src="{{card.pic}}"></div>
+                    <div class="card-info">
+                        <div class="card-title">
+                            <a href="{{card.url}}">{{card.title}}</a>
+                        </div>
+                        <div class="card-descr">
+                            Требуемые ингредиенты: 
+                            {%for ingr in card.recipe%}
+                                {{ingr}},
+                            {%endfor%} 
+                        </div>
+                    </div>
+                </div>
+            {%endfor%}
+        {%endif%}
+        
+    </div>
 {% endblock %}
