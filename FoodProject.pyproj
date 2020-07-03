@@ -28,6 +28,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="app\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\models.py">
       <SubType>Code</SubType>
     </Compile>
@@ -42,9 +45,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app.db" />
     <Content Include="app\static\css\catalog_style.css" />
     <Content Include="app\static\css\donate_style.css" />
     <Content Include="app\static\css\select_style.css" />
+    <Content Include="app\templates\add.html" />
     <Content Include="app\templates\catalog.html" />
     <Content Include="app\templates\donate.html" />
     <Content Include="app\templates\select.html" />
@@ -64,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
+    <Folder Include="app\files\" />
     <Folder Include="app\static\" />
     <Folder Include="app\static\css\" />
     <Folder Include="app\templates\" />

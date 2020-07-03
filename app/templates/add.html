@@ -1,0 +1,21 @@
+﻿{% extends "index.html" %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+    <form method="POST" action="" enctype=multipart/form-data>
+        {{ form.csrf_token }}
+        <input type="text" name="name_of_dish" id="name_of_dish" /><br />
+        <textarea name="ingridients" id="ingridients"></textarea><br />
+        <input type="text" name="url" id="url" /><br />
+        <input type="text" name="category" id="category" /><br />
+        <input type="text" name="time" id="time" /><br />
+        {{ form.name.label }} {{ form.name(size=20) }}<br />
+        {{ form.file.label }}<br />
+        {{ form.file }}<br />
+        {{ form.submit }}
+    </form>
+
+<!-- HERE YOUR CONTENT HTML CODE -->
+{% endblock %}
