@@ -28,10 +28,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="app\models.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\routes.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
