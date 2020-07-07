@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, redirect, url_for, request
-from app.forms import MyForm
+from app.forms import MyForm, MultiCheckboxField, SimpleForm
 import sys
 import codecs
 import os
@@ -23,11 +23,17 @@ def catalog():
     return render_template('catalog.html', title = title, active='catalog'.lower(), cards = cards)
     
 
-@app.route('/select/')
+@app.route('/select/', methods=['GET', 'POST'])
 def select():
+    form = SimpleForm()
     title = 'Рецепт по ингредиентам'
-    return render_template('select.html', title = title, active='select'.lower())
-
+    if form.validate_on_submit():
+        #print(form.cb.data)
+        cb_data = form.cb1.data + form.cb2.data + form.cb3.data
+        print(cb_data)
+        return render_template('select.html', title = title, active='select'.lower(), form=form)
+        #return render_template("success.html", data=cb_data)
+    return render_template('select.html', title = title, active='select'.lower(), form=form)
 
 @app.route('/donate/')
 def donate():

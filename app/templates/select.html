@@ -7,30 +7,22 @@
 {% block content %}
 <div class="main-content">
     <h1 class="wtd">Выберите ингредиенты</h1>
-    <form action="/recipes" method="POST">
+    <form method="post">
         <div class="form-div">
+            {{ form.hidden_tag() }}
             <div class="first-col">
-                <input type="checkbox" id="potato" name="potato" class="rec-cb">
-                <label for="potato" class="cb-label">Картошка</label>
-
-
+                {{ form.cb1 }}
             </div>
 
             <div class="second-col">
-                <input type="checkbox" id="carrot" name="carrot" class="rec-cb">
-                <label for="carrot" class="cb-label">Морковь</label>
-
-
+                {{ form.cb2 }}
             </div>
 
             <div class="third-col">
-                <input type="checkbox" id="cucumber" name="cucumber" class="rec-cb">
-                <label for="cucumber" class="cb-label">Огурец</label>
-
-
+                {{ form.cb3 }}
             </div>
         </div>
-        <input type="submit" value="Найти рецепты" class="submit">
+        <button type="submit" class="submit">Найти рецепты</button>
     </form>
 </div>
 
