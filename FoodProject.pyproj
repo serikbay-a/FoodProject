@@ -48,6 +48,7 @@
     <Content Include="app.db" />
     <Content Include="app\static\css\catalog_style.css" />
     <Content Include="app\static\css\donate_style.css" />
+    <Content Include="app\static\css\main.css" />
     <Content Include="app\static\css\select_style.css" />
     <Content Include="app\templates\add.html" />
     <Content Include="app\templates\catalog.html" />
@@ -69,7 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
-    <Folder Include="app\files\" />
     <Folder Include="app\static\" />
     <Folder Include="app\static\css\" />
     <Folder Include="app\templates\" />

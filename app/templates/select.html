@@ -3,7 +3,7 @@
 {% block style %}
 <link rel="stylesheet" href="{{url_for('static', filename = 'css/select_style.css') }}" />
 {% endblock %}
-
+{% block class %}start-select{% endblock %}
 {% block content %}
 <div class="main-content">
     <h1 class="wtd">Выберите ингредиенты</h1>

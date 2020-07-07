@@ -6,14 +6,12 @@
 {% block content %}
     <form method="POST" action="" enctype=multipart/form-data>
         {{ form.csrf_token }}
-        <input type="text" name="name_of_dish" id="name_of_dish" /><br />
-        <textarea name="ingridients" id="ingridients"></textarea><br />
-        <input type="text" name="url" id="url" /><br />
-        <input type="text" name="category" id="category" /><br />
-        <input type="text" name="time" id="time" /><br />
-        {{ form.name.label }} {{ form.name(size=20) }}<br />
-        {{ form.file.label }}<br />
-        {{ form.file }}<br />
+        <input type="text" name="name" id="name" placeholder="Название еды" /><br />
+        <textarea name="ingridients" id="ingridients" placeholder="Ингридиенты"></textarea><br />
+        <input type="text" name="url" id="url" placeholder="URL сайта рецепта" /><br />
+        <input type="text" name="url_img" id="url_img" placeholder="URL фото еды" /><br />
+        <input type="text" name="category" id="category" placeholder="Введите категорию еды" /><br />
+        <input type="text" name="time" id="time" placeholder="Время приготовления" /><br />
         {{ form.submit }}
     </form>
 

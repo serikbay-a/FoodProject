@@ -3,104 +3,107 @@
 {% block style %}
 <link rel="stylesheet" href="{{url_for('static', filename = 'css/catalog_style.css') }}" />
 {% endblock %}
+{% block class %}start-catalog{% endblock %}
 {% block content %}
 <!-- HERE YOUR CONTENT HTML CODE -->
-    <div class="left-sb">
-        <form action="" method="POST" class='word-form'>
-            <h3 class="word-filter">A</h3>
-            <hr>
-            <h3 class="word-filter">Б</h3>
-            <hr>
-            <h3 class="word-filter">В</h3>
-            <hr>
-            <h3 class="word-filter">Г</h3>
-            <hr>
-            <h3 class="word-filter">Д</h3>
-            <hr>
-            <h3 class="word-filter">Е</h3>
-            <hr>
-            <h3 class="word-filter">Ж</h3>
-            <hr>
-            <h3 class="word-filter">З</h3>
-            <hr>
-            <h3 class="word-filter">И</h3>
-            <hr>
-            <h3 class="word-filter">К</h3>
-            <a href="?recipe=potato" class='cb-label'>Картошка</a>
-            <hr>
-            <h3 class="word-filter">Л</h3>
-            <hr>
-            <h3 class="word-filter">М</h3>
-            <a href="?recipe=carrot" class='cb-label'>Морковь</a>
-            <hr>
-            <h3 class="word-filter">Н</h3>
-            <hr>
-            <h3 class="word-filter">О</h3>
-            <a href="?recipe=cucumber" class='cb-label'>Огурец</a>
-            <hr>
-            <h3 class="word-filter">П</h3>
-            <hr>
-            <h3 class="word-filter">Р</h3>
-            <hr>
-            <h3 class="word-filter">С</h3>
-            <hr>
-            <h3 class="word-filter">Т</h3>
-            <a href="?recipe=tomato" class='cb-label'>Помидор</a>
-            <hr>
-            <h3 class="word-filter">У</h3>
-            <hr>
-            <h3 class="word-filter">Ф</h3>
-            <hr>
-            <h3 class="word-filter">Х</h3>
-            <hr>
-            <h3 class="word-filter">Ц</h3>
-            <hr>
-            <h3 class="word-filter">Ч</h3>
-            <hr>
-            <h3 class="word-filter">Ш</h3>
-            <hr>
-            <h3 class="word-filter">Щ</h3>
-            <hr>
-            <h3 class="word-filter">Э</h3>
-            <hr>
-            <h3 class="word-filter">Ю</h3>
-            <hr>
-            <h3 class="word-filter">Я</h3>
-            <input type="submit" type="button" value="Изменить фильтр" class="submit">
 
-        </form>
+
+<div class="content-wrapper">
+
+    <div class="news-card">
+        <a href="#" class="news-card__card-link"></a>
+        <img src="https://images.pexels.com/photos/127513/pexels-photo-127513.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
+        <div class="news-card__text-wrapper">
+            <h2 class="news-card__title">Amazing First Title</h2>
+            <div class="news-card__post-date">Jan 29, 2018</div>
+            <div class="news-card__details-wrapper">
+                <p class="news-card__excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat? Ullam sed officia iure architecto deserunt distinctio, pariatur&hellip;</p>
+                <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+        </div>
     </div>
-    <div class="right">
-        <div class="categories">
-            <a href="?category=first" class='category-a' ><div class="first-category">Первое</div></a>
-            <a href="?category=second" class='category-a' ><div class="second-category">Второе</div></a>
-            <a href="?category=bakery" class='category-a' ><div class="bakery-category">Выпечка</div></a>
-        
-        </div>
-        <div class="categories">
-            <a href="?category=salad" class='category-a' ><div class="salad-category">Салаты</div></a>
-            <a href="?category=dessert" class='category-a' ><div class="dessert-category">Дессерты</div></a>
-            <a href="?category=dessert" class='category-a'><div class="dessert-category">Напитки</div></a>
 
+    <div class="news-card">
+        <a href="#" class="news-card__card-link"></a>
+        <img src="https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
+        <div class="news-card__text-wrapper">
+            <h2 class="news-card__title">Amazing Second Title that is Quite Long</h2>
+            <div class="news-card__post-date">Jan 29, 2018</div>
+            <div class="news-card__details-wrapper">
+                <p class="news-card__excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam obcaecati ex natus nulla rem sequi laborum quod fugit&hellip;</p>
+                <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
         </div>
-        {%if cards%}
-            {% for card in cards %}
-                <div class="card">
-                    <div class="card-pic"><img src="{{card.pic}}"></div>
-                    <div class="card-info">
-                        <div class="card-title">
-                            <a href="{{card.url}}">{{card.title}}</a>
-                        </div>
-                        <div class="card-descr">
-                            Требуемые ингредиенты: 
-                            {%for ingr in card.recipe%}
-                                {{ingr}},
-                            {%endfor%} 
-                        </div>
-                    </div>
+    </div>
+
+    <div class="news-card">
+        <a href="#" class="news-card__card-link"></a>
+        <img src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="news-card__image">
+        <div class="news-card__text-wrapper">
+            <h2 class="news-card__title">Amazing Title</h2>
+            <div class="news-card__post-date">Jan 29, 2018</div>
+            <div class="news-card__details-wrapper">
+                <p class="news-card__excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae&hellip;</p>
+                <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-card">
+        <a href="#" class="news-card__card-link"></a>
+        <img src="https://images.pexels.com/photos/248486/pexels-photo-248486.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
+        <div class="news-card__text-wrapper">
+            <h2 class="news-card__title">Amazing Forth Title that is Quite Long</h2>
+            <div class="news-card__post-date">Jan 29, 2018</div>
+            <div class="news-card__details-wrapper">
+                <p class="news-card__excerpt">Lorem ipsum dolor sit amet!</p>
+                <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-card">
+        <a href="#" class="news-card__card-link"></a>
+        <img src="https://images.pexels.com/photos/206660/pexels-photo-206660.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
+        <div class="news-card__text-wrapper">
+            <h2 class="news-card__title">Amazing Fifth Title</h2>
+            <div class="news-card__post-date">Jan 29, 2018</div>
+            <div class="news-card__details-wrapper">
+                <p class="news-card__excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat? Ullam sed officia iure architecto deserunt distinctio&hellip;</p>
+                <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-card">
+        <a href="#" class="news-card__card-link"></a>
+        <img src="https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
+        <div class="news-card__text-wrapper">
+            <h2 class="news-card__title">Amazing 6<sup>th</sup> Title</h2>
+            <div class="news-card__post-date">Jan 29, 2018</div>
+            <div class="news-card__details-wrapper">
+                <p class="news-card__excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur nemo tempore repellat? Ullam sed officia.</p>
+                <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--
+    {%if cards%}
+        {% for card in cards %}
+        <div class="card">
+            <div class="card-pic"><img src="{{card.url_img}}"></div>
+            <div class="card-info">
+                <div class="card-title">
+                    <a href="{{card.url}}">{{card.name}}</a>
                 </div>
-            {%endfor%}
-        {%endif%}
-        
-    </div>
+                <div class="card-descr">
+                    Требуемые ингредиенты: {{card.ingridients}}
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    {%endif%}
+-->
 {% endblock %}

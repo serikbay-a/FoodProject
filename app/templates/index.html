@@ -1,6 +1,6 @@
 ﻿<!doctype html>
 <html lang="en">
-  <head>
+<head>
     {% if title  %}
     <title>{{title}}</title>
     {% else  %}
@@ -9,40 +9,23 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link rel="icon" href="static/logo.png" type="image/x-icon">
     <link rel="shortcut icon" href="index.html" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css') }}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {% block style %} <!--link for each site--> {% endblock %}
 </head>
 <body>
     <header>
-      <nav class="navbar navbar-expand-sm  navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Recipes Agregator</a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-            aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item {% if active=='catalog' %}active{% endif %}">
-              <a class="nav-link" href="/">Каталог <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item {% if active =='select' %}active{% endif %}">
-              <a class="nav-link" href="/select/">Рецепт по ингредиентам</a>
-            </li>
-            <li class="nav-item {% if active =='donate' %}active{% endif %}">
-                <a class="nav-link" href="/donate/">Поддержать проект</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0" action='/search' method='POST'>
-            <input class="form-control mr-sm-2" type="text" placeholder="Найти рецепт">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти рецепт</button>
-          </form>
-        </div>
-      </nav>
+        <nav>
+            <a href="/catalog">Catalog</a>
+            <a href="/select">Select</a>
+            <a href="/donate">Donate</a>
+            <div class="animation {% block class %}{% endblock %}"></div>
+        </nav>
     </header>
 
     <content>
