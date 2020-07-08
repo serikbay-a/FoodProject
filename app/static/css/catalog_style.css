@@ -7,7 +7,8 @@ html, body {
 }
 
 .catalog-block {
-    display: flex;
+    display: inline-block;
+    width: 100%;
 }
 
 .cards {
@@ -16,7 +17,7 @@ html, body {
     position: relative;
     margin-top: 50px;
     display: flex;
-    width: 100%;
+    width: 100%; 
     --distance: -4rem;
     text-align: center;
 }
@@ -70,9 +71,11 @@ img {
 .recipe-card {
     background: #fff;
     margin: 4em;
-    width: 90%;
+    width: 20%;
     max-width: 496px;
     border-radius: 5px;
+    display: inline-block;
+    float: left;
 }
 
     .recipe-card aside {
