@@ -23,7 +23,26 @@ class Recipe(db.Model):
 @app.route('/catalog')
 def catalog():
     title = 'имя-сайта'
-    cards = Recipe.query.all()
+
+    cards = []
+
+    url = 'https://vk.com/im'
+    name = 'Курочка с подливой'
+    url_img = 'https://img1.russianfood.com/dycontent/images_upl/185/big_184766.jpg'
+    category = 'first'
+    ingridients = 'potato, chicken, you ^_^'
+    time = 0
+    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
+    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
+    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
+    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
+    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
+    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
+    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
+    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
+    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
+    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
+    
     return render_template('catalog.html', title = title, active='catalog'.lower(), cards = cards)
     
 
