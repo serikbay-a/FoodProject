@@ -31,28 +31,34 @@
         <h2>Первое</h2>
         <p>There is some text</p>
     </a>
-
 </div>
 
-
-<!--
-{%if cards%}
-{% for card in cards %}
-    <div class="card">
-        <div class="card-pic"><img src="{{card.pic}}"></div>
-        <div class="card-info">
-            <div class="card-title">
-                <a href="{{card.url}}">{{card.title}}</a>
-            </div>
-            <div class="card-descr">
-                Требуемые ингредиенты:
-                {%for ingr in card.recipe%}
-                    {{ingr}},
-                {%endfor%}
-            </div>
-        </div>
+<div class="catalog-block">
+    {%if cards%}
+    {% for card in cards %}
+    <div class="recipe-card">
+        <aside>
+            <img src="{{card.url_img}}" alt="Chai Oatmeal" />
+            <a href="{{card.url}}" class="button"><span class="icon icon-play"></span></a>
+        </aside>
+        <article>
+            <h2>{{card.name}}</h2>
+            <h3>{{card.category}}</h3>
+            <ul>
+                <li><span class="icon icon-users"></span><span>?</span></li>
+                <li><span class="icon icon-clock"></span><span>{{card.time}} min</span></li>
+                <li><span class="icon icon-level"></span><span>?</span></li>
+                <li><span class="icon icon-calories"></span><span>?</span></li>
+            </ul>
+            <p>For an extra thick and creamy bowl, add oat bran.  It'll make for a hearty helping and also add more fiber to your meal.  If you love the taste of chai, you'll enjoy this spiced version with coriander, cinnamon, and turmeric.</p>
+            <p class="ingredients">
+                <span>Ingredients:&nbsp;</span>
+                {{ card.ingridients }}
+            </p>
+        </article>
     </div>
-{%endfor%}
-{%endif%}
--->
+    {%endfor%}
+    {%endif%}
+
+</div>
 {% endblock %}

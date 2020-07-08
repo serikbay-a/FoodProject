@@ -11,6 +11,17 @@ html, body {
     background: #2c3e50;
 }
 
+a {
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+    a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
 nav {
     margin: 27px auto 0;
     position: relative;

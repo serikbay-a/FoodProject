@@ -16,6 +16,17 @@ body {
     flex-direction: column;
 }
 
+a {
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+    a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
 content {
     width: 100%;
     display: flex;
