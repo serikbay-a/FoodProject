@@ -23,26 +23,18 @@ class Recipe(db.Model):
 @app.route('/catalog')
 def catalog():
     title = 'имя-сайта'
-
     cards = []
+    r = Recipe
+    q = r.query.all()
+    for i in q:
+        url = i.url
+        name = i.name
+        url_img = i.url_img
+        category = i.category
+        ingridients = i.ingridients
+        time = 0
+        cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
 
-    url = 'https://vk.com/im'
-    name = 'Курочка с подливой'
-    url_img = 'https://img1.russianfood.com/dycontent/images_upl/185/big_184766.jpg'
-    category = 'first'
-    ingridients = 'potato, chicken, you ^_^'
-    time = 0
-    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-    cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-    
     return render_template('catalog.html', title = title, active='catalog'.lower(), cards = cards)
     
 
@@ -61,7 +53,7 @@ def select():
         q = r.query.all()
 
         for i in q:
-            print(i.ingridients)
+            #print(i.ingridients)
             listt = cb_data #sel ingr
             ilistt = i.ingridients.split(',') #rec ingr
             good = True
@@ -83,8 +75,8 @@ def select():
                 
                 n+=1
                 #print(i)
-        print(n)
-        print(cards)
+        #print(n)
+        #print(cards)
         return render_template('catalog.html', title = title, active='catalog'.lower(), cards = cards)
         #return render_template("success.html", data=cb_data)
     return render_template('select.html', title = title, active='select'.lower(), form=form)
