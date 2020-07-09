@@ -16,7 +16,7 @@ class Recipe(db.Model):
     time = db.Column(db.String(255), nullable=False)
 
     def __repr__(self):
-        return '<name: {} ingridients: {} url: {} url_img: {} category: {} time: {}>'.format(self.name,self.ingridients,self.url,self.url_img,self.category,self.time)
+        return '<{} name: {} ingridients: {} url: {} url_img: {} category: {} time: {}>'.format(self.id,self.name,self.ingridients,self.url,self.url_img,self.category,self.time)
 
 @app.route('/')
 @app.route('/index')
@@ -48,13 +48,44 @@ def catalog():
 
 @app.route('/select', methods=['GET', 'POST'])
 def select():
+    cards = []
     form = SimpleForm()
     title = 'Рецепт по ингредиентам'
     if form.validate_on_submit():
         #print(form.cb.data)
+        n=0
         cb_data = form.cb1.data + form.cb2.data + form.cb3.data
-        print(cb_data)
-        return render_template('select.html', title = title, active='select'.lower(), form=form)
+        #print(cb_data)
+
+        r = Recipe
+        q = r.query.all()
+
+        for i in q:
+            print(i.ingridients)
+            listt = cb_data #sel ingr
+            ilistt = i.ingridients.split(',') #rec ingr
+            good = True
+            for j in ilistt:
+                j=j.strip(' ')
+                j=j.strip()
+                if j!='' and j not in listt:
+                    good = False
+                    pass
+            if good:
+
+                url = i.url
+                name = i.name
+                url_img = i.url_img
+                category = i.category
+                ingridients = i.ingridients
+                time = 0
+                cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
+                
+                n+=1
+                #print(i)
+        print(n)
+        print(cards)
+        return render_template('catalog.html', title = title, active='catalog'.lower(), cards = cards)
         #return render_template("success.html", data=cb_data)
     return render_template('select.html', title = title, active='select'.lower(), form=form)
 
