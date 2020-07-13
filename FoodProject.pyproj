@@ -53,6 +53,12 @@
     <Content Include="app\templates\add.html" />
     <Content Include="app\templates\catalog.html" />
     <Content Include="app\templates\donate.html" />
+    <Content Include="app\templates\first - Copy %282%29.html" />
+    <Content Include="app\templates\first - Copy %283%29.html" />
+    <Content Include="app\templates\dessert.html" />
+    <Content Include="app\templates\salad.html" />
+    <Content Include="app\templates\second.html" />
+    <Content Include="app\templates\first.html" />
     <Content Include="app\templates\select.html" />
     <Content Include="app\templates\index.html" />
     <Content Include="requirements.txt" />

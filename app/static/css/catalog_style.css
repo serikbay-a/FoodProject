@@ -19,13 +19,12 @@ html, body {
     margin-top: 50px;
     display: flex;
     width: 100%; 
-    --distance: -4rem;
+    --distance: 5%;
     text-align: center;
 }
 
 h2 {
-    font-family: 'Times New Roman';
-    font-weight: 600;
+    font-weight: 400;
 }
 
 a{
@@ -39,26 +38,21 @@ a{
     }
 
 .card {
-    background: #7B6D3F;
+    background: #1abc9c;
     color: white;
-    border-radius: 1rem;
+    border-radius: 10px;
     padding: 1rem;
     margin-left: -2rem;
-    box-shadow: 4px 4px 15px 2px rgba(0, 0, 0, 0.75);
     transition: 0.2s;
-    width: 23%
+    width: 27%;
 }
 
 .card:not(:first-child){
-    margin-left: var(--distance);
+    margin-left: 12.5%;
 }
 
 .card:hover{
     transform: translateY(-1rem);
-}
-
-.card:hover ~ .card{
-    transform: translateX(calc(var(--distance)*-1));    
 }
 
 @import "bourbon";
@@ -78,21 +72,23 @@ aside > img{
     height: 100%;
 }
 .recipe-card {
-    background: #fff;
+    background: #1abc9c;
+    color: white;
     margin: 5%;
     width: 23%;
     max-height: 200vh;
-    border-radius: 5px;
+    border-radius: 10px;
     display: inline-block;
     vertical-align: top;
 }
 
     .recipe-card aside {
         position: relative;
+        color: white;
     }
         .recipe-card aside img {
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
 
         .recipe-card aside .button {
@@ -114,19 +110,23 @@ aside > img{
     .recipe-card article {
         padding: 1.25em 1.5em;
         display: inline-block;
+        color: white;
     }
         .recipe-card article ul {
             list-style: none;
             margin: 0.5em 0 0;
             padding: 0;
+            color: white;
         }
             .recipe-card article ul li {
                 display: inline-block;
                 margin-left: 1em;
                 line-height: 1em;
+                color: white;
             }
                 .recipe-card article ul li:first-child {
                     margin-left: 0;
+                    color: white;
                 }
 
                 .recipe-card article ul li .icon {
@@ -138,7 +138,7 @@ aside > img{
                     font-size: 0.8em;
                     font-weight: 300;
                     vertical-align: middle;
-                    color: #838689;
+                    color: white;
                 }
 
 
@@ -147,31 +147,33 @@ aside > img{
         .recipe-card article h2, h3 {
             margin: 0;
             font-weight: 300;
+            color: white;
         }
 
         .recipe-card article h2 {
             font-size: 28px;
-            color: #222222;
+            color: white;
         }
 
         .recipe-card article h3 {
             font-size: 15px;
-            color: #838689;
+            color: white;
         }
 
         .recipe-card article p {
             margin: 1.25em 0;
             font-size: 13px;
             font-weight: 400;
-            color: #222222;
+            color: white;
         }
             .recipe-card article p span {
                 font-weight: 700;
-                color: #000000;
+                color: white;
             }
 
         .recipe-card article .ingredients {
             margin: 2em 0 0.5em;
+            color: white;
         }
 
     .recipe-card .icon {
