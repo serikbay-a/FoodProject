@@ -75,6 +75,7 @@ def select():
                 
                 n+=1
                 #print(i)
+        q = None
         #print(n)
         #print(cards)
         return render_template('catalog.html', title = title, active='catalog'.lower(), cards = cards)
@@ -119,7 +120,7 @@ def first():
     title = 'Первое'
     cards = []
     r = Recipe
-    q = r.query.all()
+    q = r.query.filter(r.category=='first').all()
     for i in q:
         url = i.url
         name = i.name
@@ -129,6 +130,7 @@ def first():
         time = 0
         cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
 
+    q = None
     return render_template('first.html', title = title, active='catalog'.lower(), cards = cards)
 
 @app.route('/second')
@@ -136,7 +138,7 @@ def second():
     title = 'Второе'
     cards = []
     r = Recipe
-    q = r.query.all()
+    q = r.query.filter(r.category=='second').all()
     for i in q:
         url = i.url
         name = i.name
@@ -145,7 +147,7 @@ def second():
         ingridients = i.ingridients
         time = 0
         cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-
+    q = None
     return render_template('second.html', title = title, active='catalog'.lower(), cards = cards)
 
 @app.route('/salad')
@@ -153,7 +155,7 @@ def salad():
     title = 'Салат'
     cards = []
     r = Recipe
-    q = r.query.all()
+    q = r.query.filter(r.category=='salad').all()
     for i in q:
         url = i.url
         name = i.name
@@ -162,7 +164,7 @@ def salad():
         ingridients = i.ingridients
         time = 0
         cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-
+    q = None
     return render_template('salad.html', title = title, active='catalog'.lower(), cards = cards)
 
 @app.route('/dessert')
@@ -170,7 +172,7 @@ def dessert():
     title = 'Десерт'
     cards = []
     r = Recipe
-    q = r.query.all()
+    q = r.query.filter(r.category=='Dessert').all()
     for i in q:
         url = i.url
         name = i.name
@@ -179,5 +181,5 @@ def dessert():
         ingridients = i.ingridients
         time = 0
         cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
-
+    q = None
     return render_template('dessert.html', title = title, active='catalog'.lower(), cards = cards)
