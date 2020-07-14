@@ -131,7 +131,7 @@ def first():
         cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
 
     q = None
-    return render_template('first.html', title = title, active='catalog'.lower(), cards = cards)
+    return render_template('catalog.html', title = title, active='catalog'.lower(), cards = cards)
 
 @app.route('/second')
 def second():
@@ -148,7 +148,7 @@ def second():
         time = 0
         cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
     q = None
-    return render_template('second.html', title = title, active='catalog'.lower(), cards = cards)
+    return render_template('catalog.html', title = title, active='catalog'.lower(), cards = cards)
 
 @app.route('/salad')
 def salad():
@@ -165,7 +165,7 @@ def salad():
         time = 0
         cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
     q = None
-    return render_template('salad.html', title = title, active='catalog'.lower(), cards = cards)
+    return render_template('catalog.html', title = title, active='catalog'.lower(), cards = cards)
 
 @app.route('/dessert')
 def dessert():
@@ -182,4 +182,4 @@ def dessert():
         time = 0
         cards.append({"name":name, "url":url, 'url_img':url_img, 'category':category,'ingridients':ingridients, 'time': time})
     q = None
-    return render_template('dessert.html', title = title, active='catalog'.lower(), cards = cards)
+    return render_template('catalog.html', title = title, active='catalog'.lower(), cards = cards)
