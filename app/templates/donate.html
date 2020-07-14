@@ -1,9 +1,23 @@
-{% extends "index.html" %}
+﻿{% extends "index.html" %}
 
 {% block style %}
 <link rel="stylesheet" href="{{url_for('static', filename = 'css/donate_style.css') }}" />
 {% endblock %}
 {% block class %}start-donate{% endblock %}
 {% block content %}
-<!-- HERE YOUR CONTENT HTML CODE -->
+<div class="container">
+    <div class="card">
+        <div class="front">
+            <div class="logo"><span></span></div>
+        </div>
+        <div class="back">
+            <h1>Food Project<span>Быстро <i>&</i> удобно</span></h1>
+            <ul>
+                <li>8 800 333 35 35</li>
+                <li>chei-to-email@email.com</li>
+                <li>Foodproject.com</li>
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}
