@@ -44,11 +44,11 @@ a{
     padding: 1rem;
     margin-left: -2rem;
     transition: 0.2s;
-    width: 27%;
+    width: 25%;
 }
 
 .card:not(:first-child){
-    margin-left: 12.5%;
+    margin-left: 3.5%;
 }
 
 .card:hover{
